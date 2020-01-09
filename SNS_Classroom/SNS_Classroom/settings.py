@@ -122,4 +122,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,"SNS_Classroom","static")]
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "SNS_Classroom","media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
