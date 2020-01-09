@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <title>Posts</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/posts">
+                CMS
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="create" class="nav-link">Create Post</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="card">
+            <h3 class="card-title p-3">All Posts</h3>
+        </div>
+
+        {% for post in posts %}
+        <div class="card mt-4">
+            <div class="card-header py-1 d-flex justify-content-between align-items-center">
+                <div>
+                    <h4 class="card-title">{{ post.author }}</h4>
+                    <h6 class="card-subtitle text-muted">{{ post.createDate }}</h6>
+                </div>
+                <div>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="postOption"
+                            data-toggle="dropdown"></button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Delete Post</a>
+                            <a class="dropdown-item" href="#">Edit Post</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body py-3">
+                <h3 class="card-title">{{ post.postTitle }}</h3>
+                <div class="card-text">
+                    {{ post.postContent }} <br>
+                    <a href="{{ post.postFiles.url }}">{{ post.postFiles }}</a>
+                </div>
+            </div>
+
+            <!-- <div class="card-footer">
+                collapseComment1 must to be unique when creating dynamic
+                <a class="class-link" data-toggle="collapse" href="#collapseComment1">Comment</a>
+            </div>
+            <div class="collapse card-footer" id="collapseComment1">
+                <form action="#">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Write a Comment...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div> -->
+        </div>
+        {% empty %}
+        There are no posts
+        {% endfor %}
+    </div>
+
+
+    <script src="/static/jquery-3.3.1.slim.min.js"></script>
+    <script src="/static/popper.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+</body>
+
+</html>

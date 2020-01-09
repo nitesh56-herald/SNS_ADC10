@@ -23,6 +23,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('posts/',view_posts),
     path('posts/create',view_create_post),
     path('posts/create/save',create_post),
 ] 

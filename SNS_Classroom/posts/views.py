@@ -8,6 +8,13 @@ from django.db.models import Q
 from posts.models import *
 
 # Create your views here.
+def view_posts(request):
+    listOfPosts = Post.objects.all()
+    context_variable = {
+        'posts':listOfPosts
+    }
+    return render(request,'posts.html',context_variable)
+
 def view_create_post(request):
     return render(request,'createPost.html')
 
