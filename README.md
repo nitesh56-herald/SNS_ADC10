@@ -34,5 +34,5 @@ Search Results
 Delete Button
 ![GitHub Logo](Test_Images/8_DeleteButton.JPG)
 
-Search Results
+After Deleting Post
 ![GitHub Logo](Test_Images/9_After_deleting_post.JPG)
