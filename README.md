@@ -36,3 +36,6 @@ Delete Button
 
 Search Results
 ![GitHub Logo](Test_Images/9_After_deleting_post.JPG)
+
+Downloading File
+![GitHub Logo](Test_Images/10_downloading_file.PNG)
