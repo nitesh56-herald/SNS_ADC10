@@ -24,3 +24,15 @@ Update post form
 
 Showing updated form
 ![GitHub Logo](Test_Images/5_showing_updated_form.PNG)
+
+Searching Posts
+![GitHub Logo](Test_Images/6_searchingResult.JPG)
+
+Search Results
+![GitHub Logo](Test_Images/7_ResultAfterSearching.JPG)
+
+Delete Button
+![GitHub Logo](Test_Images/8_DeleteButton.JPG)
+
+Search Results
+![GitHub Logo](Test_Images/9_After_deleting_post.JPG)
