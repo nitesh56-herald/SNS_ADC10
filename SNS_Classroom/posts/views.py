@@ -23,9 +23,12 @@ def create_post(request):
     get_postTitle = request.POST['postTitle']
     get_postContent = request.POST['postContent']
     uploaded_file = request.FILES.get("postFile")
-    fs = FileSystemStorage()
-    get_postImage =fs.save(uploaded_file.name,uploaded_file)
-    postObj = Post(author=get_author,postTitle=get_postTitle,postContent=get_postContent,postFiles=get_postImage)
+    if uploaded_file:
+        fs = FileSystemStorage()
+        get_postImage = fs.save(uploaded_file.name, uploaded_file)
+        postObj = Post(author=get_author, postTitle=get_postTitle,postContent=get_postContent, postFiles=get_postImage)
+    else:
+        postObj = Post(author=get_author, postTitle=get_postTitle,postContent=get_postContent)
     postObj.save()
     return redirect('/posts/')
 

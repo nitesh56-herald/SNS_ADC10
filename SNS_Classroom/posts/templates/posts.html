@@ -65,7 +65,9 @@
                 <h3 class="card-title">{{ post.postTitle }}</h3>
                 <div class="card-text">
                     {{ post.postContent }} <br>
+                    {% if post.postFiles %}
                     <a href="{{ post.postFiles.url }}">{{ post.postFiles }}</a>
+                    {% endif %}
                 </div>
             </div>
 
