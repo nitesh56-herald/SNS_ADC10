@@ -11,16 +11,16 @@
 
 ## Testing:
 Create post form:
-![GitHub Logo](Test_Images\1_create_post_form.PNG)
+![GitHub Logo](Test_Images/1_create_post_form.PNG)
 
 Showing created posts
-![GitHub Logo](Test_Images\2_show_created_posts.PNG)
+![GitHub Logo](Test_Images/2_show_created_posts.PNG)
 
 Edit button
-![GitHub Logo](Test_Images\3.edit_button.PNG)
+![GitHub Logo](Test_Images/3.edit_button.PNG)
 
 Update post form
-![GitHub Logo](Test_Images\4_update_post_form.PNG)
+![GitHub Logo](Test_Images/4_update_post_form.PNG)
 
 Showing updated form
-![GitHub Logo](Test_Images\5_showing_updated_form.PNG)
+![GitHub Logo](Test_Images/5_showing_updated_form.PNG)
