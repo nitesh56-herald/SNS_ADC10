@@ -27,9 +27,32 @@ def create_post(request):
     get_postImage =fs.save(uploaded_file.name,uploaded_file)
     postObj = Post(author=get_author,postTitle=get_postTitle,postContent=get_postContent,postFiles=get_postImage)
     postObj.save()
-    return redirect('/posts/create')
+    return redirect('/posts/')
+
+def view_update_post(request, id):
+    get_post_to_update = Post.objects.get(id=id)
+    context_variable = {
+        'post':get_post_to_update
+    }
+    return render(request,'updatePost.html',context_variable)
+
+def update_post(request, id):
+    get_post_to_update = Post.objects.get(id=id)
+    get_post_to_update.author = request.POST['author']
+    get_post_to_update.postTitle = request.POST['postTitle']
+    get_post_to_update.postContent = request.POST['postContent']
+    get_post_to_update.save()
+    return redirect('/posts/')
 
 def delete_post(request, id):
     get_post_to_delete = Post.objects.get(id=id)
     get_post_to_delete.delete()
     return redirect('/posts/')
+
+def search_post(request):
+    get_query = request.POST['q']
+    match = Post.objects.filter(Q(author__icontains=get_query) | Q(postTitle__icontains=get_query) | Q(postContent__icontains=get_query))
+    context_variable = {
+        'posts':match
+    }
+    return render(request,'posts.html',context_variable)

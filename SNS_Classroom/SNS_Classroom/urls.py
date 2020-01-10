@@ -26,7 +26,10 @@ urlpatterns = [
     path('posts/',view_posts),
     path('posts/create',view_create_post),
     path('posts/create/save',create_post),
+    path('posts/update/<int:id>',view_update_post),
+    path('posts/update/save/<int:id>',update_post),
     path('posts/delete/<int:id>',delete_post),
+    path('posts/search',search_post),
 ] 
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
