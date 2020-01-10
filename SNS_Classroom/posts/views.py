@@ -29,3 +29,7 @@ def create_post(request):
     postObj.save()
     return redirect('/posts/create')
 
+def delete_post(request, id):
+    get_post_to_delete = Post.objects.get(id=id)
+    get_post_to_delete.delete()
+    return redirect('/posts/')
