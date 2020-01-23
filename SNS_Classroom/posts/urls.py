@@ -3,6 +3,7 @@ from posts.views import *
 
 urlpatterns = [
     path('', view_posts),
+    path('<int:id>',view_post),
     path('create', view_create_post),
     path('create/save', create_post),
     path('update/<int:id>', view_update_post),

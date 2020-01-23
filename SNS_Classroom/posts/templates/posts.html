@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="card-body py-3">
-                <h3 class="card-title">{{ post.postTitle }}</h3>
+                <h3 class="card-title"><a href="{{ post.id }}">{{ post.postTitle }}</a></h3>
                 <div class="card-text">
                     {{ post.postContent|truncatewords:50 }} <br>
                     {% if post.postFiles %}
