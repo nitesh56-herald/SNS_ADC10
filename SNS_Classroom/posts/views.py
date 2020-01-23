@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 from django.template import Template,Context
 from django.core.files.storage import FileSystemStorage
 from django.db.models import Q
-from posts.models import *
+from posts.models import Post
 
 # Create your views here.
 def view_posts(request):
@@ -14,6 +14,13 @@ def view_posts(request):
         'posts':listOfPosts
     }
     return render(request,'posts.html',context_variable)
+
+def view_post(request, id):
+    post = Post.objects.get(id=id)
+    context_variable = {
+        'post':post
+    }
+    return render(request,'post.html',context_variable)
 
 def view_create_post(request):
     return render(request,'createPost.html')
